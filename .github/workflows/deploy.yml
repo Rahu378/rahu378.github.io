@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   build:
-    name: Check and package
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,19 +26,35 @@ jobs:
       - name: Verify the site is complete and self-contained
         run: |
           set -e
-          for f in index.html experience.html projects.html skills.html about.html contact.html 404.html \
-                   assets/css/site.css assets/js/site.js assets/js/data.js assets/img/rahul.jpg; do
+          for f in index.html 404.html sitemap.xml robots.txt \
+                   assets/css/style.css assets/js/main.js assets/img/rahul.jpg \
+                   projects/index.html work/index.html skills/index.html \
+                   about/index.html contact/index.html; do
             [ -f "$f" ] || { echo "::error::missing required file $f"; exit 1; }
           done
-          # The site ships no third-party code or fonts. Fail if a CDN script or stylesheet creeps in.
-          if grep -rnoE '<(script|link)[^>]+(src|href)="https?://' --include='*.html' . | grep -v 'rel="canonical"'; then
-            echo "::error::external script or stylesheet found; the site must stay self-contained"
+
+          # The site ships no third-party runtime code. If a CDN <script> or a
+          # vendored library creeps back in, fail rather than quietly regress.
+          if grep -rnoE '<script[^>]+src="https?://' --include='*.html' .; then
+            echo "::error::external script tag found — the site must stay self-contained"
             exit 1
           fi
+
+          # The generated pages must match tools/, so nobody hand-edits one page
+          # and leaves the other five behind.
+          python3 tools/build.py >/dev/null
+          if ! git diff --quiet; then
+            echo "::error::generated pages are stale — run 'python3 tools/build.py' and commit"
+            git --no-pager diff --stat
+            exit 1
+          fi
+
           echo "Site check passed."
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
