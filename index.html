@@ -1,280 +1,438 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Rahul Reddy Chidipudi — Software Engineer</title>
-<meta name="description" content="Software engineer building backend and distributed systems in Go, Java and Python. gRPC microservices, Kubernetes, event-driven pipelines, and applied AI." />
-<meta name="theme-color" content="#07080a" />
-<meta name="color-scheme" content="dark" />
-<link rel="canonical" href="https://rahu378.github.io/" />
-
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Rahul Reddy Chidipudi — Software Engineer" />
-<meta property="og:description" content="Software engineer building backend and distributed systems in Go, Java and Python. gRPC microservices, Kubernetes, event-driven pipelines, and applied AI." />
-<meta property="og:url" content="https://rahu378.github.io/" />
-<meta property="og:image" content="https://rahu378.github.io/assets/img/rahul.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" />
-<link rel="stylesheet" href="/assets/css/style.css?v=1" />
-<link rel="preload" as="image" href="/assets/img/rahul.jpg" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2307080a'/><text y='70' x='50' text-anchor='middle' font-size='58' font-family='monospace' font-weight='700' fill='%23e8232f'>R</text></svg>" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Rahul Chidipudi · Software Engineer</title>
+  <meta name="description" content="Rahul Chidipudi is a software engineer building Java, Spring Boot and AWS microservices that stay fast under load.">
+  <meta name="theme-color" content="#000000">
+  <link rel="canonical" href="https://rahu378.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rahu378.github.io/">
+  <meta property="og:title" content="Rahul Chidipudi · Software Engineer">
+  <meta property="og:description" content="Rahul Chidipudi is a software engineer building Java, Spring Boot and AWS microservices that stay fast under load.">
+  <meta property="og:image" content="https://rahu378.github.io/assets/img/rahul.jpg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/site.js"></script>
+  <script defer src="assets/js/home.js"></script>
 </head>
-<body data-page="home">
+<body data-tone="dark">
+  <a class="skip" href="#main">Skip to content</a>
 
-<svg class="filter-lab" aria-hidden="true" focusable="false">
-  <defs>
-    <filter id="inkPortrait" x="-12%" y="-12%" width="124%" height="124%" color-interpolation-filters="sRGB">
-      <feColorMatrix type="matrix" in="SourceGraphic" result="lum"
-        values="0.30 0.59 0.11 0 0
-                0.30 0.59 0.11 0 0
-                0.30 0.59 0.11 0 0
-                0    0    0    1 0" />
-
-      <!-- Soften before quantising: posterizing a smooth gradient straight off
-           the sensor speckles the forehead and cheek into islands. Edge
-           detection below still runs off the sharp luma. -->
-      <feGaussianBlur in="lum" stdDeviation="1.6" result="lumSoft" />
-
-      <feComponentTransfer in="lumSoft" result="crushed">
-        <feFuncR type="linear" slope="1.14" intercept="-0.06" />
-        <feFuncG type="linear" slope="1.14" intercept="-0.06" />
-        <feFuncB type="linear" slope="1.14" intercept="-0.06" />
-      </feComponentTransfer>
-
-      <feComponentTransfer in="crushed" result="posterized">
-        <feFuncR type="discrete" tableValues="0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1" />
-        <feFuncG type="discrete" tableValues="0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1" />
-        <feFuncB type="discrete" tableValues="0 0.125 0.25 0.375 0.5 0.625 0.75 0.875 1" />
-      </feComponentTransfer>
-
-      <!-- Warm duotone: ink -> oxblood -> rust -> warm bone, so the portrait
-           sits in the same family as the red accent instead of reading as a
-           cold studio shot. Top stop is warm bone, not white, so neither the
-           lit forehead nor the grey backdrop clips. -->
-      <feComponentTransfer in="posterized" result="duotone">
-        <feFuncR type="table" tableValues="0.039 0.110 0.208 0.333 0.490 0.659 0.804 0.925" />
-        <feFuncG type="table" tableValues="0.039 0.071 0.098 0.137 0.208 0.329 0.541 0.851" />
-        <feFuncB type="table" tableValues="0.055 0.086 0.110 0.122 0.153 0.200 0.369 0.753" />
-      </feComponentTransfer>
-
-      <feConvolveMatrix in="lum" result="edgeRaw" order="3" preserveAlpha="true"
-        kernelMatrix="-1 -1 -1  -1  8 -1  -1 -1 -1" divisor="1" bias="0" />
-      <feColorMatrix in="edgeRaw" type="matrix" result="edgeLuma"
-        values="0.33 0.33 0.33 0 0
-                0.33 0.33 0.33 0 0
-                0.33 0.33 0.33 0 0
-                0    0    0    1 0" />
-      <!-- White where flat, darkening on strong edges: the multiply below keys
-           off RGB, so white must be the no-op. -->
-      <feComponentTransfer in="edgeLuma" result="inkLines">
-        <feFuncR type="table" tableValues="1 0.92 0.58 0.18 0" />
-        <feFuncG type="table" tableValues="1 0.92 0.58 0.18 0" />
-        <feFuncB type="table" tableValues="1 0.92 0.58 0.18 0" />
-      </feComponentTransfer>
-      <feGaussianBlur in="inkLines" stdDeviation="0.4" result="inkSoft" />
-      <feBlend in="duotone" in2="inkSoft" mode="multiply" result="inked" />
-      <feComposite in="inked" in2="SourceGraphic" operator="in" />
-    </filter>
-
-    <filter id="inkPlate" x="-12%" y="-12%" width="124%" height="124%" color-interpolation-filters="sRGB">
-      <feColorMatrix type="matrix" in="SourceGraphic" result="lum"
-        values="0.30 0.59 0.11 0 0
-                0.30 0.59 0.11 0 0
-                0.30 0.59 0.11 0 0
-                0    0    0    1 0" />
-      <feConvolveMatrix in="lum" result="e" order="3" preserveAlpha="true"
-        kernelMatrix="0 -1 0  -1 4 -1  0 -1 0" divisor="1" />
-      <feComponentTransfer in="e">
-        <feFuncA type="discrete" tableValues="0 0 0 0.85 1" />
-      </feComponentTransfer>
-    </filter>
-  </defs>
-</svg>
-
-<div class="wipe" id="wipe" aria-hidden="true"></div>
-<div class="grid-bg" aria-hidden="true"></div>
-<div class="noise" aria-hidden="true"></div>
-
-<a class="skip" href="#main">Skip to content</a>
-
-<header class="topbar">
-  <a class="brand" href="/">
-    <span class="brand__dot" aria-hidden="true"></span>
-    <span class="brand__txt">rahul<span>.dev</span></span>
-  </a>
-
-  <nav class="nav" aria-label="Sections">
-    <a href="/projects/">Systems</a>
-    <a href="/work/">Experience</a>
-    <a href="/skills/">Tooling</a>
-    <a href="/about/">About</a>
-    <a href="/contact/" class="nav__cta">Contact</a>
-  </nav>
-
-  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
-    <span></span><span></span>
-  </button>
-</header>
-
-<nav class="menu" id="menu" aria-hidden="true">
-  <div class="menu__bg" aria-hidden="true"></div>
-  <ul class="menu__list">
-    <li><a href="/" data-i="00" aria-current="page"><span>HOME</span></a></li>
-    <li><a href="/projects/" data-i="01"><span>SYSTEMS</span></a></li>
-    <li><a href="/work/" data-i="02"><span>EXPERIENCE</span></a></li>
-    <li><a href="/skills/" data-i="03"><span>TOOLING</span></a></li>
-    <li><a href="/about/" data-i="04"><span>ABOUT</span></a></li>
-    <li><a href="/contact/" data-i="05"><span>CONTACT</span></a></li>
-  </ul>
-  <div class="menu__foot">
-    <a href="mailto:rahul.r24.c@gmail.com">rahul.r24.c@gmail.com</a>
-    <a href="https://github.com/Rahu378" target="_blank" rel="noopener noreferrer">github.com/Rahu378</a>
-    <a href="https://www.linkedin.com/in/rahulchidipudi/" target="_blank" rel="noopener noreferrer">in/rahulchidipudi</a>
-    <span>McLean, VA</span>
-  </div>
-</nav>
-
-<main id="main">
-
-<section class="hero" id="hero">
-  <div class="hero__glow" aria-hidden="true"></div>
-
-  <figure class="portrait" id="portrait">
-    <div class="portrait__aura" aria-hidden="true"></div>
-    <div class="portrait__stage" id="portraitStage">
-      <img class="portrait__plate" src="/assets/img/rahul.jpg" alt="" aria-hidden="true" />
-      <img class="portrait__img" src="/assets/img/rahul.jpg" alt="Rahul Reddy Chidipudi" />
-      <div class="portrait__halftone" aria-hidden="true"></div>
-      <div class="portrait__vig" aria-hidden="true"></div>
-      <div class="portrait__rim" aria-hidden="true"></div>
+  <header class="nav" data-tone="dark">
+    <div class="nav-in">
+      <a class="brand" href="index.html" aria-current="page"><span class="brand-mark" aria-hidden="true"><span>RC</span></span><span>Rahul Chidipudi</span></a>
+      <nav aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <a class="nav-cta" href="contact.html">Contact</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span></button>
     </div>
-    <div class="portrait__fade" aria-hidden="true"></div>
-  </figure>
-
-  <div class="hero__copy">
-    <h1 class="hero__title">
-      <span class="ln"><span class="w">Backend</span> <span class="w">systems,</span></span>
-      <span class="ln"><span class="w">measured</span> <span class="w">in</span></span>
-      <span class="ln"><span class="w accent">milliseconds<span class="dot">.</span></span></span>
-    </h1>
-
-    <p class="hero__eyebrow"><i class="rule"></i>HI, I AM RAHUL</p>
-    <p class="hero__role">
-      <span>SOFTWARE ENGINEER</span><span>BACKEND &middot; DISTRIBUTED SYSTEMS &middot; APPLIED AI</span>
-    </p>
-
-    <a class="cta" href="/projects/">
-      <span class="cta__disc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l10 7-10 7z"/></svg></span>
-      <span class="cta__txt">SEE THE SYSTEMS</span>
-    </a>
-  </div>
-
-  <!-- A real shell, not a chatbot. Type into it. -->
-  <div class="term" id="term">
-    <div class="term__bar">
-      <span class="term__dots" aria-hidden="true"><i></i><i></i><i></i></span>
-      <span class="term__title">rahul@portfolio &mdash; zsh</span>
-      <span class="term__live" aria-hidden="true"><b></b>live</span>
+    <div class="nav-menu" id="menu" hidden>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-
-    <div class="term__body" id="termBody" role="log" aria-live="polite" aria-label="Terminal output"></div>
-
-    <form class="term__form" id="termForm" autocomplete="off">
-      <label class="term__prompt" for="termInput" aria-hidden="true">&rsaquo;</label>
-      <input class="term__input" id="termInput" name="cmd" type="text"
-             autocomplete="off" autocapitalize="off" spellcheck="false"
-             aria-label="Type a command" placeholder="type a command &mdash; try &lsquo;help&rsquo;" />
-    </form>
-
-    <div class="term__hints" aria-label="Suggested commands">
-      <button type="button" data-cmd="help">help</button>
-      <button type="button" data-cmd="whoami">whoami</button>
-      <button type="button" data-cmd="projects">projects</button>
-      <button type="button" data-cmd="stack">stack</button>
-      <button type="button" data-cmd="contact">contact</button>
-    </div>
-  </div>
-
-  <div class="hero__slate" aria-hidden="true">
-    <span>MCLEAN, VA</span><span>AVAILABLE</span>
-  </div>
-</section>
-
-<section class="sec sec--tight">
-  <div class="metrics__rail">
-    <article class="metric reveal">
-      <div class="metric__v"><span class="count" data-to="95" data-suffix="ms">0</span></div>
-      <p class="metric__k">p50 API latency</p>
-      <p class="metric__n">down from 180ms &mdash; REST&nbsp;&rarr;&nbsp;gRPC in Go</p>
-    </article>
-    <article class="metric reveal">
-      <div class="metric__v"><span class="count" data-to="50" data-suffix="K+">0</span></div>
-      <p class="metric__k">requests / sec sustained</p>
-      <p class="metric__n">Netty async I/O, 3ms overhead</p>
-    </article>
-    <article class="metric reveal">
-      <div class="metric__v"><span class="count" data-to="500" data-suffix="GB">0</span></div>
-      <p class="metric__k">telemetry processed daily</p>
-      <p class="metric__n">Kafka &rarr; PostgreSQL, 5 business units</p>
-    </article>
-    <article class="metric reveal">
-      <div class="metric__v"><span class="count" data-to="94" data-suffix="%">0</span></div>
-      <p class="metric__k">detection precision</p>
-      <p class="metric__n">AML structuring patterns, LangGraph</p>
-    </article>
-  </div>
-</section>
-
-<section class="sec">
-  <header class="sec__head">
-    <span class="sec__tag">THE INDEX</span>
-    <h2 class="sec__title">Four ways in</h2>
-    <p class="sec__sub">Start wherever you like &mdash; each one stands on its own.</p>
   </header>
 
-  <ol class="index">
-    <li class="reveal"><a href="/projects/">
-      <span class="index__n">01</span>
-      <span class="index__b"><b>Systems</b><i>ShadowDB, FinSight, Text2Workflow, PageRank at scale &mdash; with the architecture drawn out.</i></span>
-      <span class="index__go" aria-hidden="true">&rarr;</span></a></li>
-    <li class="reveal"><a href="/work/">
-      <span class="index__n">02</span>
-      <span class="index__b"><b>Experience</b><i>NextGen IT Solutions, Appworks, DXC Technology.</i></span>
-      <span class="index__go" aria-hidden="true">&rarr;</span></a></li>
-    <li class="reveal"><a href="/skills/">
-      <span class="index__n">03</span>
-      <span class="index__b"><b>Tooling</b><i>Go, Java, Python, Kubernetes, Kafka, Spark, and the rest of it.</i></span>
-      <span class="index__go" aria-hidden="true">&rarr;</span></a></li>
-    <li class="reveal"><a href="/about/">
-      <span class="index__n">04</span>
-      <span class="index__b"><b>About</b><i>Background, education, certifications and what I do outside the editor.</i></span>
-      <span class="index__go" aria-hidden="true">&rarr;</span></a></li>
-  </ol>
-</section>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero dark" data-tone="dark">
+      <div class="hero-copy wrap center">
+        <p class="t-kicker hero-kicker fade-load" style="--i:0">Software Engineer</p>
+        <h1 class="t-hero"><span class="rise"><span class="metal">Rahul</span> <span class="metal" style="--i:1">Chidipudi</span></span></h1>
+        <p class="t-sub hero-tag fade-load" style="--i:1">Engineered for scale.</p>
+        <p class="t-lead hero-sub fade-load" style="--i:2">Java, Spring Boot and AWS microservices, from the first commit to production.</p>
+        <div class="cta-row fade-load" style="--i:3">
+          <a class="btn" href="projects.html">See the projects</a>
+          <a class="more" href="experience.html">Read the experience</a>
+        </div>
+      </div>
+      <figure class="hero-stage fade-load" style="--i:4">
+        <canvas id="mesh" role="img" aria-label="A slowly turning model of fifteen connected services, with requests travelling between a gateway, services and data stores."></canvas>
+        <figcaption class="hero-readout">
+          <span class="ro"><span class="live-dot" aria-hidden="true"></span> Live model</span>
+          <span class="ro"><b class="num" id="ro-flight">0</b> requests in flight</span>
+          <span class="ro"><b class="num">15</b> services</span>
+          <span class="ro"><b class="num" id="ro-avg">120</b> ms average</span>
+        </figcaption>
+      </figure>
+    </section>
 
-<nav class="actnav" aria-label="Page navigation">
-  <div class="actnav__side actnav__side--prev actnav__side--end">
-    <span class="actnav__dir">START</span>
-    <span class="actnav__t">HOME</span>
-  </div>
-  <a class="actnav__side actnav__side--next" href="/projects/">
-    <span class="actnav__dir">NEXT &rarr;</span>
-    <span class="actnav__n">01</span>
-    <span class="actnav__t">SYSTEMS</span>
-  </a>
-</nav>
-</main>
+    <!-- Statement -->
+    <section class="sec dark statement" data-tone="dark">
+      <div class="wrap">
+        <p class="t-statement" data-words>Nearly two years of designing, building and deploying microservices and web apps. Mostly Java, Spring Boot and AWS. Always about making slow things fast.</p>
+      </div>
+    </section>
 
-<footer class="foot">
-  <span>&copy; <span id="yr">2026</span> Rahul Reddy Chidipudi</span>
-  <a href="/">Back to home &uarr;</a>
-</footer>
+    <!-- Portrait reveal -->
+    <section class="meet dark" id="meet" data-tone="dark">
+      <div class="meet-pin">
+        <div class="wrap meet-in">
+          <div class="meet-copy" data-stagger>
+            <h2 class="t-display reveal">Hi, I’m Rahul.</h2>
+            <p class="t-lead muted reveal">A software engineer who loves the moment a slow system gets fast. I build Java and Spring Boot services on AWS, and lately, AI agents that work on real data.</p>
+            <ul class="meet-facts reveal" role="list">
+              <li><b>B.S. Computer Science</b><span>Rowan University, 2024</span></li>
+              <li><b>AWS Certified Developer</b><span>Stanford ML Specialization too</span></li>
+              <li><b>JPMorgan Chase</b><span>via NextGen IT Solutions</span></li>
+            </ul>
+            <a class="more" href="about.html">More about me</a>
+          </div>
+          <figure class="meet-photo">
+            <div class="meet-stage">
+              <div class="meet-frame">
+                <img src="assets/img/rahul.jpg" alt="Rahul Chidipudi, smiling, in a navy suit and white shirt" width="880" height="880" decoding="async" onerror="this.closest('figure').classList.add('no-photo')">
+                <span class="ph-mono" aria-hidden="true">RC</span>
+              </div>
+              <span class="meet-badge b1" aria-hidden="true"><b>450 → 120ms</b> API latency</span>
+              <span class="meet-badge b2" aria-hidden="true"><b>AWS</b> Certified Developer</span>
+              <span class="meet-badge b3" aria-hidden="true"><b>4th</b> of 68 teams</span>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-<script src="/assets/js/main.js?v=1" defer></script>
+    <!-- Latency, scrubbed by scroll -->
+    <section class="latency dark" id="latency" data-tone="dark">
+      <div class="latency-pin">
+        <div class="wrap">
+          <p class="t-kicker muted">JPMorgan Chase, via NextGen IT Solutions</p>
+          <p class="lat-num num" aria-hidden="true"><span id="lat-val">120</span><span class="lat-unit">ms</span></p>
+          <div class="lat-bar" aria-hidden="true"><span id="lat-fill" style="--s:.2667;--hue:135"></span></div>
+          <h2 class="t-sub lat-cap">Average API response time.</h2>
+          <p class="t-lead muted lat-sub">Redis caching and rewritten SQL took it from 450ms to 120ms.</p>
+          <p class="t-title lat-out" id="lat-out">3.75× faster.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Numbers -->
+    <section class="sec mist" data-tone="light">
+      <div class="wrap">
+        <h2 class="t-display reveal">The numbers behind the work.</h2>
+        <p class="t-lead muted reveal bento-lead">From production systems at JPMorgan Chase and from projects I benchmarked myself.</p>
+        <div class="bento" data-stagger>
+          <article class="tile tile-deploy reveal">
+            <p class="tile-num num"><span data-count="80" data-suf="%">80%</span></p>
+            <h3 class="tile-h">less manual deployment time</h3>
+            <p class="tile-p">Jenkins and GitHub Actions pipelines shipping to AWS EC2, S3 and RDS.</p>
+            <div class="deploy-bars" aria-hidden="true">
+              <div><span class="db-l">Before</span><span class="db-t"><i style="--w:1"></i></span></div>
+              <div><span class="db-l">After</span><span class="db-t"><i class="db-blue" style="--w:.2"></i></span></div>
+            </div>
+          </article>
+
+          <article class="tile tile-shadow reveal">
+            <p class="tile-num num"><span data-count="50" data-suf="K+">50K+</span></p>
+            <h3 class="tile-h">requests per second through ShadowDB</h3>
+            <p class="tile-p">A Netty proxy mirroring live traffic, adding 3ms on average.</p>
+            <svg class="lanes" viewBox="0 0 300 150" aria-hidden="true">
+              <path d="M0 50 H300" stroke="#2c2c2e" stroke-width="2"/>
+              <path d="M0 100 H300" stroke="#2c2c2e" stroke-width="2" stroke-dasharray="4 6"/>
+              <g fill="#f5f5f7">
+                <circle r="4"><animateMotion dur="1.4s" repeatCount="indefinite" path="M-10 50 H310"/></circle>
+                <circle r="4"><animateMotion dur="1.4s" begin=".35s" repeatCount="indefinite" path="M-10 50 H310"/></circle>
+                <circle r="4"><animateMotion dur="1.4s" begin=".7s" repeatCount="indefinite" path="M-10 50 H310"/></circle>
+                <circle r="4"><animateMotion dur="1.4s" begin="1.05s" repeatCount="indefinite" path="M-10 50 H310"/></circle>
+              </g>
+              <g fill="#2997ff">
+                <circle r="4"><animateMotion dur="1.4s" begin=".05s" repeatCount="indefinite" path="M-10 100 H310"/></circle>
+                <circle r="4"><animateMotion dur="1.4s" begin=".4s" repeatCount="indefinite" path="M-10 100 H310"/></circle>
+                <circle r="4"><animateMotion dur="1.4s" begin=".75s" repeatCount="indefinite" path="M-10 100 H310"/></circle>
+                <circle r="4"><animateMotion dur="1.4s" begin="1.1s" repeatCount="indefinite" path="M-10 100 H310"/></circle>
+              </g>
+              <text x="0" y="36" fill="#a1a1a6" font-size="13">primary</text>
+              <text x="0" y="86" fill="#2997ff" font-size="13">shadow</text>
+            </svg>
+          </article>
+
+          <article class="tile tile-watch reveal">
+            <p class="tile-num num"><span data-count="15" data-suf="+">15+</span></p>
+            <h3 class="tile-h">microservices under watch</h3>
+            <p class="tile-p">Prometheus and Grafana caught issues earlier. Downtime fell 15%.</p>
+            <div class="svc-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="blink"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </article>
+
+          <article class="tile tile-cover reveal">
+            <svg class="ring" viewBox="0 0 120 120" aria-hidden="true">
+              <circle cx="60" cy="60" r="50" stroke="#e8e8ed" stroke-width="12" fill="none"/>
+              <circle class="ring-val" cx="60" cy="60" r="50" stroke="#30d158" stroke-width="12" fill="none" stroke-linecap="round" pathLength="100" stroke-dasharray="100" style="--v:92"/>
+            </svg>
+            <p class="tile-num num"><span data-count="92" data-suf="%">92%</span></p>
+            <h3 class="tile-h">line coverage</h3>
+            <p class="tile-p">Across 150+ edge-case contract tests on the API gateway.</p>
+          </article>
+
+          <article class="tile tile-p99 reveal">
+            <p class="tile-num num">p99 &lt; 150ms</p>
+            <h3 class="tile-h">search latency at 1,500 requests per second</h3>
+            <p class="tile-p">Geo, date and price search over 1M seeded listings in StayFinder.</p>
+            <svg class="hist" viewBox="0 0 300 90" aria-hidden="true" preserveAspectRatio="none">
+              <g fill="#ff385c">
+                <rect x="0" y="62" width="16" height="28"/><rect x="20" y="34" width="16" height="56"/><rect x="40" y="12" width="16" height="78"/><rect x="60" y="4" width="16" height="86"/><rect x="80" y="18" width="16" height="72"/><rect x="100" y="36" width="16" height="54"/><rect x="120" y="50" width="16" height="40"/><rect x="140" y="60" width="16" height="30"/><rect x="160" y="68" width="16" height="22"/><rect x="180" y="74" width="16" height="16"/><rect x="200" y="79" width="16" height="11"/><rect x="220" y="83" width="16" height="7"/>
+              </g>
+              <path d="M262 0 V90" stroke="#1d1d1f" stroke-width="2" stroke-dasharray="3 4"/>
+            </svg>
+          </article>
+
+          <article class="tile tile-batch reveal">
+            <p class="tile-num num">40+ → 3</p>
+            <h3 class="tile-h">database calls per GraphQL query</h3>
+            <p class="tile-p">DataLoader batching in the Trip Planner API.</p>
+            <div class="batch" aria-hidden="true">
+              <div class="batch-many"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="batch-few"><i></i><i></i><i></i></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience teaser -->
+    <section class="sec tease" data-tone="light">
+      <div class="wrap tease-grid">
+        <div class="tease-copy" data-stagger>
+          <h2 class="t-title reveal">Experience, as a conversation.</h2>
+          <p class="t-lead muted reveal">Three companies and a student chapter, each in its own chat. Read the thread, or ask a question of your own.</p>
+          <div class="cta-row reveal"><a class="btn" href="experience.html">Open the chats</a></div>
+        </div>
+        <div class="phone-wrap">
+          <div class="phone" id="phone" aria-hidden="true">
+            <div class="phone-screen">
+              <div class="phone-island"></div>
+              <div class="phone-head">
+                <span class="ph-av" style="background:#1a73e8">NG</span>
+                <span class="ph-who"><b>NextGen · JPMorgan Chase</b><small id="ph-status">Rahul, You</small></span>
+              </div>
+              <div class="phone-body" id="phone-body"></div>
+              <div class="phone-input"><span>Message</span><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects, sideways -->
+    <section class="hscroll dark" id="work" data-tone="dark">
+      <div class="hs-pin">
+        <div class="wrap hs-head">
+          <h2 class="t-display">Six projects. All running.</h2>
+          <p class="t-lead muted">Each has a working model you can play with on the projects page.</p>
+        </div>
+        <div class="hs-track" id="hs-track">
+          <a class="pcard" href="projects.html#shadowdb" style="--c:#2997ff">
+            <div class="pcard-art">
+              <svg viewBox="0 0 400 260" aria-hidden="true">
+                <g stroke="#3a3a3c" stroke-width="2" fill="none">
+                  <path d="M70 130 H200"/>
+                  <path d="M200 130 C262 130 268 74 330 74"/>
+                  <path d="M200 130 C262 130 268 186 330 186" stroke="#2997ff" stroke-dasharray="5 6"/>
+                </g>
+                <circle cx="70" cy="130" r="18" fill="#3a3a3c"/>
+                <rect x="176" y="106" width="48" height="48" rx="14" fill="#2997ff"/>
+                <circle cx="330" cy="74" r="22" fill="#f5f5f7"/>
+                <circle cx="330" cy="186" r="21" fill="#0b0b0c" stroke="#2997ff" stroke-width="2"/>
+                <g fill="#fff">
+                  <circle r="4.5"><animateMotion dur="1.8s" repeatCount="indefinite" path="M70 130 H200 C262 130 268 74 330 74"/></circle>
+                  <circle r="4.5"><animateMotion dur="1.8s" begin=".6s" repeatCount="indefinite" path="M70 130 H200 C262 130 268 74 330 74"/></circle>
+                  <circle r="4.5"><animateMotion dur="1.8s" begin="1.2s" repeatCount="indefinite" path="M70 130 H200 C262 130 268 74 330 74"/></circle>
+                </g>
+                <g fill="#2997ff">
+                  <circle r="4.5"><animateMotion dur="1.8s" begin=".1s" repeatCount="indefinite" path="M70 130 H200 C262 130 268 186 330 186"/></circle>
+                  <circle r="4.5"><animateMotion dur="1.8s" begin=".7s" repeatCount="indefinite" path="M70 130 H200 C262 130 268 186 330 186"/></circle>
+                  <circle r="4.5"><animateMotion dur="1.8s" begin="1.3s" repeatCount="indefinite" path="M70 130 H200 C262 130 268 186 330 186"/></circle>
+                </g>
+                <g fill="#a1a1a6" font-size="14" text-anchor="middle">
+                  <text x="70" y="172">app</text><text x="200" y="182">proxy</text><text x="330" y="36">primary</text><text x="330" y="234">shadow</text>
+                </g>
+              </svg>
+            </div>
+            <div class="pcard-body">
+              <p class="pcard-kind">Database shadowing proxy</p>
+              <h3>ShadowDB</h3>
+              <p>50K+ requests a second, 3ms added latency, 12+ regressions caught before production.</p>
+            </div>
+          </a>
+
+          <a class="pcard" href="projects.html#gateway" style="--c:#30d158">
+            <div class="pcard-art">
+              <svg viewBox="0 0 400 260" aria-hidden="true" class="gw">
+                <g font-size="15" fill="#a1a1a6">
+                  <g style="--d:0"><circle class="gw-dot" cx="72" cy="52" r="9"/><text x="96" y="57">accounts</text><rect x="236" y="47" width="96" height="10" rx="5" fill="#2c2c2e"/></g>
+                  <g style="--d:1"><circle class="gw-dot" cx="72" cy="88" r="9"/><text x="96" y="93">payments</text><rect x="236" y="83" width="76" height="10" rx="5" fill="#2c2c2e"/></g>
+                  <g style="--d:2"><circle class="gw-dot" cx="72" cy="124" r="9"/><text x="96" y="129">cards</text><rect x="236" y="119" width="88" height="10" rx="5" fill="#2c2c2e"/></g>
+                  <g style="--d:3"><circle class="gw-dot" cx="72" cy="160" r="9"/><text x="96" y="165">loans</text><rect x="236" y="155" width="64" height="10" rx="5" fill="#2c2c2e"/></g>
+                  <g style="--d:4"><circle class="gw-dot" cx="72" cy="196" r="9"/><text x="96" y="201">fx</text><rect x="236" y="191" width="84" height="10" rx="5" fill="#2c2c2e"/></g>
+                </g>
+                <rect x="62" y="226" width="276" height="8" rx="4" fill="#2c2c2e"/>
+                <rect class="gw-cov" x="62" y="226" width="276" height="8" rx="4" fill="#30d158"/>
+              </svg>
+            </div>
+            <div class="pcard-body">
+              <p class="pcard-kind">Contract testing framework</p>
+              <h3>API Gateway</h3>
+              <p>150+ edge-case contract tests at 92% coverage, and three race conditions found.</p>
+            </div>
+          </a>
+
+          <a class="pcard" href="projects.html#stayfinder" style="--c:#ff385c">
+            <div class="pcard-art">
+              <svg viewBox="0 0 400 260" aria-hidden="true">
+                <defs><pattern id="sf-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.7" fill="#3a3a3c"/></pattern></defs>
+                <rect width="400" height="190" fill="url(#sf-dots)"/>
+                <g fill="#ff385c" class="sf-pins">
+                  <circle cx="110" cy="70" r="6"/><circle cx="150" cy="118" r="6"/><circle cx="214" cy="80" r="6"/><circle cx="262" cy="134" r="6"/><circle cx="300" cy="60" r="6"/><circle cx="182" cy="150" r="6"/>
+                </g>
+                <circle r="54" fill="rgba(255,56,92,.12)" stroke="#ff385c" stroke-width="2"><animateMotion dur="9s" repeatCount="indefinite" path="M130 90 C 200 40, 300 70, 270 120 S 150 170, 130 90"/></circle>
+                <g class="sf-cal">
+                  <rect x="62" y="212" width="32" height="28" rx="8"/><rect x="102" y="212" width="32" height="28" rx="8"/><rect class="held" x="142" y="212" width="32" height="28" rx="8"/><rect class="held" x="182" y="212" width="32" height="28" rx="8"/><rect class="held" x="222" y="212" width="32" height="28" rx="8"/><rect x="262" y="212" width="32" height="28" rx="8"/><rect x="302" y="212" width="32" height="28" rx="8"/>
+                </g>
+              </svg>
+            </div>
+            <div class="pcard-body">
+              <p class="pcard-kind">Vacation-rental booking</p>
+              <h3>StayFinder</h3>
+              <p>p99 under 150ms over 1M listings, and a saga that gives dates back when a payment fails.</p>
+            </div>
+          </a>
+
+          <a class="pcard" href="projects.html#tripplanner" style="--c:#ff9f0a">
+            <div class="pcard-art">
+              <svg viewBox="0 0 400 260" aria-hidden="true" class="tp">
+                <g class="tp-many" fill="#ff9f0a">
+                  <rect x="60" y="40" width="40" height="5" rx="2.5"/><rect x="72" y="49" width="40" height="5" rx="2.5"/><rect x="84" y="58" width="40" height="5" rx="2.5"/><rect x="96" y="67" width="40" height="5" rx="2.5"/><rect x="108" y="76" width="40" height="5" rx="2.5"/><rect x="120" y="85" width="40" height="5" rx="2.5"/><rect x="132" y="94" width="40" height="5" rx="2.5"/><rect x="144" y="103" width="40" height="5" rx="2.5"/><rect x="156" y="112" width="40" height="5" rx="2.5"/><rect x="168" y="121" width="40" height="5" rx="2.5"/><rect x="180" y="130" width="40" height="5" rx="2.5"/><rect x="192" y="139" width="40" height="5" rx="2.5"/><rect x="204" y="148" width="40" height="5" rx="2.5"/><rect x="216" y="157" width="40" height="5" rx="2.5"/><rect x="228" y="166" width="40" height="5" rx="2.5"/><rect x="240" y="175" width="40" height="5" rx="2.5"/><rect x="252" y="184" width="40" height="5" rx="2.5"/><rect x="264" y="193" width="40" height="5" rx="2.5"/><rect x="276" y="202" width="40" height="5" rx="2.5"/><rect x="288" y="211" width="40" height="5" rx="2.5"/>
+                </g>
+                <g class="tp-few" fill="#ff9f0a">
+                  <rect x="60" y="80" width="120" height="22" rx="8"/><rect x="60" y="116" width="150" height="22" rx="8"/><rect x="60" y="152" width="96" height="22" rx="8"/>
+                </g>
+                <text class="tp-l1" x="340" y="236" text-anchor="end" fill="#a1a1a6" font-size="15">40+ calls</text>
+                <text class="tp-l2" x="340" y="236" text-anchor="end" fill="#f5f5f7" font-size="15" font-weight="600">3 calls</text>
+              </svg>
+            </div>
+            <div class="pcard-body">
+              <p class="pcard-kind">GraphQL API with AI itineraries</p>
+              <h3>Trip Planner</h3>
+              <p>DataLoader batching took 40+ database calls per query down to 3. AI cost under $5 a month.</p>
+            </div>
+          </a>
+
+          <a class="pcard" href="projects.html#finsight" style="--c:#ffd60a">
+            <div class="pcard-art">
+              <svg viewBox="0 0 400 260" aria-hidden="true" class="fs">
+                <g font-size="14" fill="#a1a1a6">
+                  <g class="fs-row"><rect x="50" y="30" width="300" height="30" rx="8" fill="#1d1d1f"/><text x="66" y="50">Card purchase</text><text x="334" y="50" text-anchor="end">$84.20</text></g>
+                  <g class="fs-row hot" style="--d:0"><rect x="50" y="66" width="300" height="30" rx="8"/><text x="66" y="86">Cash deposit</text><text x="334" y="86" text-anchor="end">$9,800</text></g>
+                  <g class="fs-row"><rect x="50" y="102" width="300" height="30" rx="8" fill="#1d1d1f"/><text x="66" y="122">Wire out</text><text x="334" y="122" text-anchor="end">$1,250</text></g>
+                  <g class="fs-row hot" style="--d:1"><rect x="50" y="138" width="300" height="30" rx="8"/><text x="66" y="158">Cash deposit</text><text x="334" y="158" text-anchor="end">$9,700</text></g>
+                  <g class="fs-row hot" style="--d:2"><rect x="50" y="174" width="300" height="30" rx="8"/><text x="66" y="194">Cash deposit</text><text x="334" y="194" text-anchor="end">$9,900</text></g>
+                </g>
+                <g class="fs-flag"><rect x="50" y="216" width="176" height="30" rx="15" fill="#ffd60a"/><text x="138" y="236" text-anchor="middle" font-size="14" font-weight="600" fill="#1d1d1f">Possible structuring</text></g>
+              </svg>
+            </div>
+            <div class="pcard-body">
+              <p class="pcard-kind">AI financial compliance agent</p>
+              <h3>FinSight</h3>
+              <p>An AWS Bedrock agent that flags structuring, screens watchlists and writes the audit report.</p>
+            </div>
+          </a>
+
+          <a class="pcard" href="projects.html#gallery" style="--c:#bf5af2">
+            <div class="pcard-art">
+              <svg viewBox="0 0 400 260" aria-hidden="true">
+                <path d="M90 130 C90 60 170 52 210 70 S 320 60 320 122 S 260 210 200 196 S 90 200 90 130Z" stroke="#3a3a3c" stroke-width="14" fill="none" stroke-linejoin="round"/>
+                <g>
+                  <circle r="7" fill="#bf5af2"><animateMotion dur="5s" repeatCount="indefinite" path="M90 130 C90 60 170 52 210 70 S 320 60 320 122 S 260 210 200 196 S 90 200 90 130Z"/></circle>
+                  <circle r="7" fill="#f5f5f7"><animateMotion dur="5.2s" begin="-.3s" repeatCount="indefinite" path="M90 130 C90 60 170 52 210 70 S 320 60 320 122 S 260 210 200 196 S 90 200 90 130Z"/></circle>
+                  <circle r="7" fill="#ff9f0a"><animateMotion dur="5.6s" begin="-1.6s" repeatCount="indefinite" path="M90 130 C90 60 170 52 210 70 S 320 60 320 122 S 260 210 200 196 S 90 200 90 130Z"/></circle>
+                  <circle r="7" fill="#2997ff"><animateMotion dur="5.9s" begin="-3s" repeatCount="indefinite" path="M90 130 C90 60 170 52 210 70 S 320 60 320 122 S 260 210 200 196 S 90 200 90 130Z"/></circle>
+                </g>
+                <g class="cam"><rect x="150" y="116" width="100" height="30" rx="15" fill="#bf5af2"/><text x="200" y="136" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Camera 3</text></g>
+              </svg>
+            </div>
+            <div class="pcard-body">
+              <p class="pcard-kind">Agentic F1 broadcast director</p>
+              <h3>The Gallery</h3>
+              <p>10 Hz telemetry and Gemini 2.5 Flash called 50% of passes live, against a 1.8% baseline.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keep exploring -->
+    <section class="sec mist" data-tone="light">
+      <div class="wrap">
+        <h2 class="t-title reveal">Keep exploring.</h2>
+        <div class="explore" data-stagger>
+          <a class="ex reveal" href="skills.html">
+            <h3 class="t-sub">Skills</h3>
+            <p class="muted">Every skill on the résumé, traced to where I actually used it.</p>
+            <ul class="chips ex-chips" aria-hidden="true"><li class="chip">Java</li><li class="chip">Spring Boot</li><li class="chip">Kafka</li><li class="chip">Redis</li><li class="chip">AWS</li><li class="chip">Docker</li><li class="chip">Python</li></ul>
+            <span class="more">Explore the stack</span>
+          </a>
+          <a class="ex reveal" href="about.html">
+            <h3 class="t-sub">About</h3>
+            <p class="muted">Rowan University, the ACM chapter, two certifications and two hackathon finishes.</p>
+            <p class="ex-big num">4<small>th</small> <span>of 68 teams</span></p>
+            <span class="more">Read more</span>
+          </a>
+          <a class="ex ex-dark reveal" href="contact.html">
+            <h3 class="t-sub">Contact</h3>
+            <p class="muted">Email is the quickest way to reach me.</p>
+            <p class="ex-mail">rahulchidipudi<wbr>@outlook.com</p>
+            <span class="more">Get in touch</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Close -->
+    <section class="sec dark close" data-tone="dark">
+      <div class="wrap center" data-stagger>
+        <h2 class="t-display reveal">Let’s build something fast.</h2>
+        <p class="t-lead muted reveal">Tell me about the system, the team, or the role.</p>
+        <div class="cta-row reveal"><a class="btn" href="mailto:rahulchidipudi@outlook.com">Email me</a><a class="more" href="contact.html">More ways to reach me</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot" data-tone="dark">
+    <div class="wrap">
+      <p class="foot-word" aria-hidden="true">Rahul Chidipudi</p>
+      <div class="foot-grid">
+        <div>
+          <h2>Pages</h2>
+          <ul><li><a href="experience.html">Experience</a></li><li><a href="projects.html">Projects</a></li><li><a href="skills.html">Skills</a></li><li><a href="about.html">About</a></li></ul>
+        </div>
+        <div>
+          <h2>Elsewhere</h2>
+          <ul><li><a href="https://github.com/Rahu378" rel="noopener">GitHub</a></li><li><a href="https://www.linkedin.com/in/rahulchidipudi" rel="noopener">LinkedIn</a></li><li><a href="resume/">Résumé (PDF)</a></li><li><a href="mailto:rahulchidipudi@outlook.com">Email</a></li><li><a href="tel:+18565269115">+1 (856) 526-9115</a></li></ul>
+        </div>
+        <div>
+          <h2>This site</h2>
+          <ul><li>Built by hand in HTML, CSS and JavaScript.</li><li>No trackers, no cookies, no frameworks.</li></ul>
+        </div>
+      </div>
+      <p class="foot-note"><span>© <span data-year>2026</span> Rahul Chidipudi</span><span>United States</span></p>
+    </div>
+  </footer>
 </body>
 </html>
