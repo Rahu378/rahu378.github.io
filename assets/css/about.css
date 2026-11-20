@@ -84,3 +84,26 @@ html.js .award.in .dots i { transform: none; }
 @media (max-width: 760px) { .how-grid { grid-template-columns: minmax(0, 1fr); } }
 
 .next-band .next .t-display span { color: var(--on-dark-2); }
+
+/* ---------- Certifications: seven on the dark band ---------- */
+.certs-lead { margin-top: 18px; font-weight: 400; }
+.cert-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: clamp(40px, 5vw, 64px) 0 0; padding: 0; list-style: none; }
+.cert { min-height: 210px; gap: 22px; padding: 24px; background: var(--night-2); color: var(--on-dark); }
+.cert .cert-mark { font-size: clamp(40px, 4vw, 60px); color: var(--c, var(--link-dark)); }
+.cert h3 { font-size: 19px; font-weight: 600; letter-spacing: -.02em; }
+.cert p { margin-top: 2px; font-size: 14px; color: var(--on-dark-2); }
+.cert-ms { --c: #2997ff; grid-column: span 2; }
+.cert-aws { --c: #ff9f0a; }
+.cert-hf { --c: #ffd60a; }
+.cert-ibm { --c: #64d2ff; }
+.cert-ml { --c: #30d158; background: var(--night-2); grid-column: span 4; min-height: 0; }
+.edu-bs { font-size: clamp(84px, 12.5vw, 184px); }
+@media (max-width: 900px) {
+  .cert-grid { grid-template-columns: 1fr 1fr; }
+  .cert-ms, .cert-ml { grid-column: span 2; }
+}
+@media (max-width: 520px) {
+  .cert-grid { grid-template-columns: minmax(0, 1fr); }
+  .cert-ms, .cert-ml { grid-column: auto; }
+  .cert { min-height: 0; }
+}

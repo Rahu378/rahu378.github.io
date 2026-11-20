@@ -215,7 +215,7 @@
   display: grid; grid-template-columns: minmax(150px, 220px) minmax(0, 1fr) auto; gap: 6px 32px; align-items: center;
   padding: 28px 32px; border-radius: var(--r-lg); background: var(--mist);
 }
-.lg-n { grid-row: span 2; font-size: clamp(44px, 5vw, 68px); font-weight: 700; letter-spacing: -.05em; line-height: 1; }
+.lg-n { font-size: clamp(44px, 5vw, 68px); font-weight: 700; letter-spacing: -.05em; line-height: 1; }
 .lg-t h3 { font-size: 21px; font-weight: 600; letter-spacing: -.02em; }
 .lg-t p { margin-top: 2px; color: var(--ink-2); }
 .lg-co { font-size: 14px; font-weight: 500; color: var(--ink-2); text-align: right; }

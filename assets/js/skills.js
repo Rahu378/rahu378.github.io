@@ -90,8 +90,8 @@
     el.style.setProperty('--i', i);
     new IntersectionObserver(([e], o) => { if (e.isIntersecting) { el.classList.add('in'); o.disconnect(); } }).observe(el);
   });
-  const first = [...groupsEl.querySelectorAll('.sk')].find(b => b.firstChild.textContent === 'Java');
-  if (first && !narrow.matches) show('Java', first);
+  const first = [...groupsEl.querySelectorAll('.sk')].find(b => b.firstChild.textContent === 'Python');
+  if (first && !narrow.matches) show('Python', first);
   narrow.addEventListener('change', e => { if (!e.matches) groupsEl.after(panel); });
 
   /* ---------- Reach chart ---------- */

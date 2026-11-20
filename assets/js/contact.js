@@ -1,7 +1,7 @@
 /* Contact: copy the address, and turn the visitor's choices into a mailto: link. Nothing is sent from the page. */
 (() => {
   const R = window.RESUME;
-  const email = (R && R.email) || 'rahulchidipudi@outlook.com';
+  const email = (R && R.email) || 'rahul.r24.c@gmail.com';
 
   const copy = document.getElementById('copy');
   const copied = document.getElementById('copied');

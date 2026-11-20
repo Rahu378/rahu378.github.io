@@ -1,6 +1,6 @@
 # rahu378.github.io
 
-Portfolio for **Rahul Chidipudi**, software engineer (Java, Spring Boot, AWS, AI).
+Portfolio for **Rahul Chidipudi**, software engineer in AI and ML (enterprise RAG, AI agents, Azure and AWS).
 
 **Live:** https://rahu378.github.io
 
@@ -8,11 +8,11 @@ Portfolio for **Rahul Chidipudi**, software engineer (Java, Spring Boot, AWS, AI
 
 | Page | What it does |
 | --- | --- |
-| `index.html` | Keynote-style home: a live service-mesh model, a scroll-scrubbed latency figure (450 → 120ms), a portrait reveal, and the projects moving sideways as you scroll |
+| `index.html` | Keynote-style home: a live model of an AI assistant, a scroll-scrubbed decode-throughput figure (28.0 → 48.1 tok/s), a portrait reveal, and the projects moving sideways as you scroll |
 | `experience.html` | Each role as a messenger-style chat that replays what shipped; visitors can ask follow-up questions, answered from the résumé |
-| `projects.html` | Six working models running in the browser: ShadowDB, the API gateway test suite, StayFinder search and booking saga, Trip Planner's N+1 vs DataLoader, the FinSight agent, and The Gallery's race director |
+| `projects.html` | Three working models running in the browser: Hardware-Aware Gateway's decode token split, FinOpsAI's spend forecast and policy endpoint, and The Gallery's race director |
 | `skills.html` | Every skill traced to the roles, projects and certifications that use it |
-| `about.html` | Education, ACM, certifications and hackathon rankings |
+| `about.html` | Education, seven certifications, and how I work |
 | `contact.html` | Email, phone, GitHub, and an email starter that opens the visitor's own mail app |
 
 ## How it's built

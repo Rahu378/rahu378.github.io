@@ -63,7 +63,7 @@ html.js .bars.in .fill { transform: none; }
 .story-h { margin-bottom: 36px; }
 .layers { display: grid; gap: 8px; }
 .layers li {
-  display: grid; gap: 2px; padding: 14px 18px; border-radius: 16px; background: var(--night-1); opacity: .55;
+  display: grid; gap: 2px; padding: 14px 18px; border-radius: 16px; background: var(--night-1); opacity: .62;
   transition: background-color .45s ease, opacity .45s ease, transform .45s var(--ease-out);
 }
 .layers b { font-size: 17px; font-weight: 600; letter-spacing: -.016em; }

@@ -10,12 +10,12 @@
   if (hero && !reduce) scrub(hero, (p, r) => hero.style.setProperty('--hp', clamp(-r.top / r.height).toFixed(4)));
   if ($('#mesh')) initMesh($('#mesh'));
 
-  // A slowly turning model of fifteen services: a gateway, eight services and six data stores.
+  // A slowly turning model of an AI assistant: an agent, eight components around it, and six models and stores.
   function initMesh(c) {
     let run = null;
-    const svc = ['auth', 'search', 'booking', 'payments', 'trips', 'ledger', 'profile', 'notify'];
-    const data = ['redis', 'kafka', 'postgres', 'mongo', 's3', 'elastic'];
-    const gateway = { name: 'gateway', tier: 0, x: 0, y: 0, z: 0, a: 0, links: [] };
+    const svc = ['router', 'retriever', 'guardrails', 'tools', 'evals', 'audit log', 'entra id', 'api'];
+    const data = ['bm25', 'azure openai', 'pgvector', 'pinecone', 'sharepoint', 'langsmith'];
+    const gateway = { name: 'agent', tier: 0, x: 0, y: 0, z: 0, a: 0, links: [] };
     const services = svc.map((name, i) => {
       const a = (i / svc.length) * Math.PI * 2;
       return { name, tier: 1, a, x: Math.cos(a) * 1.05, y: Math.sin(i * 2.1) * 0.22, z: Math.sin(a) * 1.05, links: [] };
@@ -41,7 +41,7 @@
     function spawn() {
       const s = services[(Math.random() * services.length) | 0];
       const d = s.links[(Math.random() * s.links.length) | 0];
-      const hit = d.name === 'redis';
+      const hit = d.name === 'bm25';
       packets.push({ route: [gateway, s, d, s, gateway], seg: 0, t: Math.random() * 0.2, speed: hit ? 2.7 : 1.55 + Math.random() * 0.5, hit, age: 0, trail: [] });
     }
 
@@ -108,7 +108,7 @@
       for (const n of order) {
         const { x, y, s } = n.p;
         const r = (n.tier === 0 ? 17 : n.tier === 1 ? 9 : 11) * s;
-        const col = n.name === 'redis' ? '48,209,88' : tint[n.tier];
+        const col = n.name === 'bm25' ? '48,209,88' : tint[n.tier];
         const glow = ctx.createRadialGradient(x, y, 0, x, y, r * 3.2);
         glow.addColorStop(0, `rgba(${col},${0.32 * s})`);
         glow.addColorStop(1, `rgba(${col},0)`);
@@ -161,19 +161,23 @@
     }, 'pin');
   }
 
-  /* ---------- Latency, scrubbed by scroll ---------- */
+  /* ---------- Decode throughput, scrubbed by scroll ---------- */
   const lat = $('#latency');
   if (lat && !reduce) {
     const val = $('#lat-val'), fill = $('#lat-fill'), out = $('#lat-out');
     scrub(lat, p => {
       const t = ease(clamp((p - 0.1) / 0.6));
-      const v = Math.round(lerp(450, 120, t));
-      val.textContent = v;
-      fill.style.setProperty('--s', (v / 450).toFixed(4));
+      const v = lerp(28.0, 48.1, t);
+      val.textContent = v.toFixed(1);
+      fill.style.setProperty('--s', (v / 48.1).toFixed(4));
       fill.style.setProperty('--hue', lerp(4, 135, t).toFixed(1));
       out.classList.toggle('on', p > 0.74);
     }, 'pin');
   }
+
+  /* ---------- FinOpsAI tile: one tick per backtest origin ---------- */
+  const ticks = $('.batch-many');
+  if (ticks) for (let i = 0; i < 76; i++) ticks.append(document.createElement('i'));
 
   /* ---------- Phone chat ---------- */
   const phone = $('#phone');
@@ -183,15 +187,15 @@
   }
 
   function phoneChat(body, status) {
-    const card = '<div class="pm-card"><b>450 → 120ms</b><div class="pm-row">Before<span><i style="--w:1"></i></span></div><div class="pm-row">After<span><i class="fast" style="--w:.267"></i></span></div></div>';
+    const card = '<div class="pm-card"><b>&lt;3%</b><span class="pm-sub">hallucination on out-of-scope questions</span></div>';
     const script = [
       ['out', 'Hey Rahul 👋 What were you building at NextGen?'],
-      ['in', 'Java 17 and Spring Boot microservices for a data management platform at JPMorgan Chase.'],
-      ['out', 'Biggest win?'],
-      ['in', 'Latency. Redis caching and better SQL took the average API response from 450ms to 120ms.'],
+      ['in', 'An enterprise knowledge assistant over policies and SOPs, for compliance, legal and advisory teams.'],
+      ['out', 'How do you stop it making things up?'],
+      ['in', 'Confidence scoring and structured refusal. It stayed under 3% in quarterly audits.'],
       ['card'],
-      ['out', 'And releases?'],
-      ['in', 'Jenkins and GitHub Actions pipelines to AWS. Manual deployment time dropped 80%.']
+      ['out', 'And when the prompts change?'],
+      ['in', 'A 500+ query golden set gates every change in GitHub Actions, so regressions get caught before production.']
     ];
     const wait = ms => new Promise(r => setTimeout(r, ms));
     const add = (cls, fill) => {
